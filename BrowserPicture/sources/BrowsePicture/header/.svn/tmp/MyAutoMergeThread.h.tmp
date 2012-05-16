@@ -1,0 +1,114 @@
+/**@file
+*****************************************************************************
+* 版权所有(C) 高迪未来(北京)科技有限公司 CopyRight(2011 - ...)
+* @brief 内容摘要:
+* @date 2011/08/23
+* @note  修改记录: 
+1.修改注释格式,将tab转换为2个空格 [2011/08/23 15:34 fox]
+********************************************************************************/
+#ifndef  MYAUTOMERGETHREAD_H_
+#define  MYAUTOMERGETHREAD_H_
+
+#include<QThread>
+#include "split/SPLIT.h"
+
+/**
+* 线程操作图像自动合并的
+* @author Eric
+* @date 2011-8-18
+*/
+class MyAutoMergeThread:public QThread
+<<<<<<< .mine
+	{
+	Q_OBJECT
+	public:
+		MyAutoMergeThread(void);
+		void run();
+		~MyAutoMergeThread(void);
+		void setMethod(int method);
+		void setSplit(int);
+		void setRGB(int);
+		void setGray(int);
+		void setPath(QString);
+=======
+{
+  Q_OBJECT
+public:
+  MyAutoMergeThread(void);
+  void run();
+  ~MyAutoMergeThread(void);
+  void setMethod(int method);
+  void setPath(QString);
+>>>>>>> .r18
+signals:
+<<<<<<< .mine
+		void done();
+		void showpic(QString);//显示处理完毕的图片
+		void showDoingPic(QString);//显示正在处理的图片
+		public slots:
+			void autoMergePic();
+	private:
+		/************************************************************************/
+ /* split->rgb->gray 合并
+ */
+ /************************************************************************/
+ bool automergePicByFirstMethod(SPLIT m_split);
+ bool automergePicBySplit(SPLIT m_split);
+ bool automergePicByrgb(SPLIT m_split);
+ bool automergePicBygray(SPLIT m_split);
+ /************************************************************************/
+ /* rgb->split->gray合并
+ */
+ /************************************************************************/
+ bool automergePicBySecondMethod(SPLIT m_split);
+ bool automergePicBySecondMethod_Split(SPLIT m_split);
+ /************************************************************************/
+ /* rgb->gray->split 合并
+ */
+ /************************************************************************/
+ bool automergePicByThirdMethod(SPLIT m_split);
+
+	private:
+		SPLIT mSpliter;
+		int method;
+		int split_pic;
+		int rgb_pic;
+		int gray_pic;
+		QString pic_path;
+	};
+=======
+  void done();
+  void showpic(QString);//显示处理完毕的图片
+  void showDoingPic(QString);//显示正在处理的图片
+public slots:
+    void autoMergePic();
+private:
+  /**
+  * @brief split->rgb->gray 合并
+  * @param [in] m_split 
+  * @return bool 
+  */
+  bool automergePicByFirstMethod(SPLIT m_split);
+  bool automergePicBySplit(SPLIT m_split);
+  bool automergePicByrgb(SPLIT m_split);
+  bool automergePicBygray(SPLIT m_split);
+  /**
+  * @brief rgb->split->gray合并
+  * @param [in] m_split 
+  * @return bool 
+  */
+  bool automergePicBySecondMethod(SPLIT m_split);
+  bool automergePicBySecondMethod_Split(SPLIT m_split);
+  /**
+  * @brief rgb->gray->split 合并
+  * @param [in] m_split 
+  * @return bool 
+  */
+  bool automergePicByThirdMethod(SPLIT m_split);
+private:
+  SPLIT mSpliter;
+  QString pic_path;
+  int method;
+};
+>>>>>>> .r18
+#endif

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/BrowserPicture/!svn/ver/41/build
+END
+vc.postbuild.bat
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/BrowserPicture/!svn/ver/27/build/vc.postbuild.bat
+END
+vc.prebuild.bat
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/BrowserPicture/!svn/ver/1/build/vc.prebuild.bat
+END
+BrowsePicture.sln
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/BrowserPicture/!svn/ver/22/build/BrowsePicture.sln
+END

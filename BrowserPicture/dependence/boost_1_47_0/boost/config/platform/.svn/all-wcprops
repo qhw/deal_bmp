@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/config/platform
+END
+linux.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/config/platform/linux.hpp
+END
+cygwin.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/config/platform/cygwin.hpp
+END
+win32.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/config/platform/win32.hpp
+END
+symbian.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/config/platform/symbian.hpp
+END
+macos.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/config/platform/macos.hpp
+END
+vms.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/config/platform/vms.hpp
+END
+bsd.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/config/platform/bsd.hpp
+END
+irix.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/config/platform/irix.hpp
+END
+solaris.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/config/platform/solaris.hpp
+END
+amigaos.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/config/platform/amigaos.hpp
+END
+aix.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/config/platform/aix.hpp
+END
+vxworks.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/config/platform/vxworks.hpp
+END
+hpux.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/config/platform/hpux.hpp
+END
+qnxnto.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/config/platform/qnxnto.hpp
+END
+beos.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/config/platform/beos.hpp
+END

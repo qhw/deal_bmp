@@ -1,0 +1,478 @@
+/**@file
+*****************************************************************************
+* 版权所有(C) 高迪未来(北京)科技有限公司 CopyRight(2011 - ...)
+* @brief 内容摘要:
+* @date 2011/08/23
+* @note  修改记录: 
+1.修改注释格式,将tab转换为2个空格 [2011/08/23 15:34 fox]
+********************************************************************************/
+
+#include "stdafx.h"
+#include "browsepicture.h"
+#include "view.h"
+
+#include "managepic.h"
+#include "splitdlg.h"
+#include "PicBlock.h"
+
+BrowsePicture::BrowsePicture(QWidget *parent, Qt::WFlags flags)
+: QMainWindow(parent, flags)
+{
+  ui.setupUi(this);
+
+  Init();
+  showMaximized();//最大化显示
+}
+void BrowsePicture::Init()
+{
+  method = 0;
+  viewport = new View("图片展示",this->ui.widget_view);
+  item = NULL;
+  scene = NULL;
+  ShowThumbnail(":/images/default.bmp");
+  /*scene = new QGraphicsScene;*/
+  // viewport->view()->setScene(&scene);
+  ui.tabWidget->setTabText(1,"合并");
+  connect(ui.open_act,SIGNAL(triggered()),this , SLOT(ActionTriggerd()));
+  connect(ui.exit_act,SIGNAL(triggered()),this , SLOT(ActionTriggerd()));
+  connect(ui.open_btn,SIGNAL(clicked()),this,SLOT(ButtonClicked()));
+  connect(ui.split_btn,SIGNAL(clicked()),this,SLOT(ButtonClicked()));
+  connect(ui.open_dir_btn,SIGNAL(clicked()),this,SLOT(ButtonClicked()));
+  connect(ui.show_pic_btn,SIGNAL(clicked()),this,SLOT(ButtonClicked()));
+  connect(ui.auto_merge_btn,SIGNAL(clicked()),this,SLOT(ButtonClicked()));
+}
+void BrowsePicture::resizeEvent(QResizeEvent *event)
+{
+  viewport->resize(ui.widget_view->width(),ui.widget_view->height());
+}
+BrowsePicture::~BrowsePicture()
+{
+
+}
+
+void BrowsePicture::ActionTriggerd()
+{
+  QAction *act=qobject_cast <QAction*>(sender());
+  if(!act)
+    return;
+  if (act == ui.open_act)
+  {
+    OpenFile();
+  }
+  else  if (act == ui.exit_act)
+  {
+    close();
+  }
+
+}
+void BrowsePicture::ButtonClicked()
+{
+  QPushButton*btn=qobject_cast <QPushButton*>(sender());
+  if(!btn)
+    return; 
+  if (btn == ui.open_btn)
+  {
+    OpenFile();
+  }
+  else if (btn == ui.split_btn)
+  {
+    OpenSplitDialog();
+  }
+  else if (btn == ui.open_dir_btn)
+  {
+    OpenDir();
+    ui.dir_edit->setText(pic_path);
+  }
+  else if (btn == ui.show_pic_btn)
+  {
+    if(!ReadFile(pic_path))
+    {
+      return;
+    }
+    ShowImage();
+  }else if(btn == ui.auto_merge_btn)
+<<<<<<< .mine
+	  {
+	  if(!ReadFile(pic_path))
+		  {
+		  return;
+		  }
+	  automergethread.setMethod(method);
+	  automergethread.setSplit(split_pic);
+	  automergethread.setRGB(rgb_pic);
+	  automergethread.setGray(gray_pic);
+	  automergethread.setPath(pic_path);
+	  connect(&automergethread,SIGNAL(done()),this,SLOT(doneSuccess()));
+	  connect(&automergethread,SIGNAL(fail()),this,SLOT(doneFail()));
+	  connect(&automergethread,SIGNAL(showpic(QString)),this,SLOT(ShowDonePicture(QString)));
+	  connect(&automergethread,SIGNAL(showDoingPic(QString)),this,SLOT(ShowThumbnail(QString)));
+		automergethread.start();
+	  }
+=======
+  {
+    if(!ReadFile(pic_path))
+    {
+      return;
+    }
+    automergethread.setMethod(method);
+    automergethread.setPath(pic_path);
+    connect(&automergethread,SIGNAL(done()),this,SLOT(doneSuccess()));
+    connect(&automergethread,SIGNAL(fail()),this,SLOT(doneFail()));
+    connect(&automergethread,SIGNAL(showpic(QString)),this,SLOT(ShowDonePicture(QString)));
+    connect(&automergethread,SIGNAL(showDoingPic(QString)),this,SLOT(ShowThumbnail(QString)));
+    automergethread.start();
+  }
+>>>>>>> .r18
+}
+
+/************************************************************************/
+/*@注：namelist文件名是从1开始往后读 
+*/
+/************************************************************************/
+void BrowsePicture::PopulateScene(const QStringList &namelist)
+{
+  //scene->clear();
+  //QPixmap temp_pixmap = QPixmap(pic_path + namelist[1]);
+  //int width = temp_pixmap.width();
+  //int height = temp_pixmap.height();
+
+  //for(int i = 1; i < namelist.size() ; ++i)
+  //{
+  //  QString path = pic_path + namelist[i];
+  //  QGraphicsItem *item = new PicBlock(/*namelist[i]*/path,width,height, viewport->view());
+  //  QStringList pic = AnalyticFileName(namelist[i]);
+  //  int row = pic[0].toInt();
+  //  int col = pic[1].toInt();
+  //  item->setPos(QPointF(row*width, col*height));
+  //  scene->addItem(item);
+  //}
+}
+
+QStringList BrowsePicture::AnalyticFileName(const QString & filename)
+{
+  QStringList list;
+  int start = 0, end = 0;
+  QString row = "", col = "";
+  int l1 = 0 ,l2 = 0;
+
+  start =  filename.indexOf("L");
+  end = filename.indexOf("_",start);
+  l1 = end - start - 1;
+  col = filename.mid(start + 1, l1);
+
+
+  start = filename.indexOf("C");
+  end = filename.indexOf("_",start);
+  l2 = end -start - 1;
+  row = filename.mid(start + 1, l2);
+  list << row;
+  list << col;
+
+  //@TODO需要添加其他筛选条件,通道和灰阶
+  return list;
+}
+QString BrowsePicture::OpenFile()
+{
+  QString dir = "../";
+  QString filter = "BmpFiles (*.bmp)\nAllfiles(*.*)";
+  QString filename = QFileDialog :: getOpenFileName (this, "打开图片文件",dir ,filter );
+
+  if (!filename.right(4).contains(".bmp"))
+  {
+    QMessageBox::warning(this, 
+      "警告", 
+      "请打开BMP文件！", 
+      "Yes");
+    return "";
+  }
+  ShowThumbnail(filename) ;
+  return filename;
+}
+void BrowsePicture::OpenDir()
+{
+  QFileDialog *fileDialog = new QFileDialog(this); 
+  fileDialog->setWindowTitle(tr("选择图片所在文件夹路径")); 
+  fileDialog->setDirectory("../"); 
+  fileDialog-> setFileMode( QFileDialog::DirectoryOnly ); 
+  if(fileDialog->exec() == QDialog::Accepted) { 
+    pic_path = fileDialog->selectedFiles()[0]; 
+    //QMessageBox::information(NULL, tr("Path"), tr("You selected ") + pic_path); 
+  } else { 
+    // QMessageBox::information(NULL, tr("Path"), tr("You didn't select any files.")); 
+  }
+}
+bool BrowsePicture::ShowThumbnail(QString filename)
+{
+  QPixmap pixmap;
+  SPLIT m_split;
+  BMFH bmfh = m_split.getBMFH(filename.toLatin1().data());
+  BMIH bmih  =  m_split.getBMIH(filename.toLatin1().data());
+  int pic_size = bmfh.bfSize;
+  //如果图像大小合适，打开filename,否则打开默认背景
+  if (pic_size <= 30000000)//30M
+  {
+    pixmap = QPixmap(filename);
+  }
+  else
+  {
+    pixmap = QPixmap(":/images/default.bmp");
+    filename = ":/images/default.bmp";
+  }
+  //QList<QGraphicsItem *>  qlist = scene->items();
+  //for(int i = 0; i < qlist.size(); i++)
+  // {	
+  //	scene->removeItem(qlist[i]);
+  // }
+  /*解决图像位置显示不正确的问题
+  以及内存泄露问题*/
+  if(item != NULL)
+  {
+    delete item;
+    item = NULL;
+  }
+  if(scene != NULL) 
+  {
+    delete scene;
+    scene = NULL;
+  }
+  scene = new QGraphicsScene;
+  viewport->view()->setScene(scene);
+  //scene.clear();
+  /*PicBlock *item1 = new PicBlock(filename,pixmap.width(),pixmap.height(),viewport->view());
+  scene->addItem(item1);*/
+  //PicBlock *item1 = new PicBlock(filename,pixmap.width(),pixmap.height(),viewport->view());
+
+  item = new PicBlock;
+  item->setValue(filename,pixmap.width(),pixmap.height(),viewport->view());
+  scene->addItem(item);
+  viewport->view()->centerOn(pixmap.width()/2,pixmap.height()/2);
+  //viewport->view()->centerOn(&item);
+  /************************************************************************/
+  /*@TODO获取显示信息 
+  */
+  /************************************************************************/
+
+  QStringList list;
+  list.append(filename);
+  list.append(QString::number(bmih.biHeight));
+  list.append(QString::number(bmih.biWidth));
+  list.append(QString::number(bmfh.bfSize));
+  if (list.size() >= 4)
+  {
+    SetPicInfo(list);
+  }
+  return true;
+}
+bool BrowsePicture::SetPicInfo(QStringList list)
+{
+  ui.property_table->item(1,1)->setText(list[0]);
+  ui.property_table->item(2,1)->setText(list[1]);
+  ui.property_table->item(3,1)->setText(list[2]);
+  ui.property_table->item(4,1)->setText(list[3]);
+  return true;
+}
+
+void BrowsePicture::OpenSplitDialog()
+{
+  SplitDlg dlg(this);
+  connect(&dlg,SIGNAL(startSplitPic(int,QString,int,int,int,int,int,int)),this,SLOT(splitPic(int,QString,int,int,int,int,int,int)));
+  dlg.exec();
+}
+void BrowsePicture::splitPic(int way,QString filename,int row,int col,int gray,int split,int rgb,int grey)
+{
+  splitthread.setMethod(way);
+  splitthread.setPath(filename);
+  splitthread.setSplitArea(row,col);
+  splitthread.setSplitGray(gray);
+  splitthread.setSplit(split);
+  splitthread.setRGB(rgb);
+  splitthread.setGray(grey);
+  connect(&splitthread,SIGNAL(done()),this,SLOT(doneSuccess()));
+  connect(&splitthread,SIGNAL(fail()),this,SLOT(doneFail()));
+  connect(&splitthread,SIGNAL(showpic(QString)),this,SLOT(ShowDonePicture(QString)));
+  connect(&splitthread,SIGNAL(showDoingPic(QString)),this,SLOT(ShowThumbnail(QString)));
+  splitthread.start();
+}
+bool BrowsePicture::SafeCkeckDir(const QString &)
+{
+
+  QString dirpath = ui.dir_edit->text();
+  if (dirpath.isEmpty())
+  {
+    return false;
+  }
+  QDir dir(dirpath);
+  if (!dir.exists())
+  {
+    // QMessageBox::warning(this, "警告", "文件夹不存在！","Yes");
+    // ui.dir_edit->setText("C:");
+    return false;
+  }
+
+  //@TODO读取文件夹下的信息，判断是否是要找的文件夹，下面是否有图片
+  //安全检测后才能将显示图片的按钮变可用
+  return true;
+}
+void BrowsePicture::ShowImage()
+{
+  //判断路径没有问题才可以显示
+  //if(!SafeCkeckDir(pic_path))return;
+  ////获得所有图片名称列表
+  //ManagePic loadpic;
+  //QStringList list = loadpic.FindFile(pic_path);
+  //pic_path = list[0];
+  //pic_path += "/";
+  ////筛选出符合条件的名称列表
+  //QStringList namelist = SelectPicNameList(list);
+  ////根据名称列表加载场景并显示
+  //if (namelist.size() > 1)
+  //{
+  //  PopulateScene(namelist);
+  //}
+  //else
+  //{
+  //  QMessageBox::warning(this, "警告", "没有找到正确的图片！","Yes");
+  //}
+
+<<<<<<< .mine
+	mergethread.setMethod(method);
+  mergethread.setSplit(split_pic);
+  mergethread.setRGB(rgb_pic);
+  mergethread.setGray(gray_pic);
+	mergethread.setPath(pic_path);
+	setMergeThread(&mergethread);
+	connect(&mergethread,SIGNAL(done()),this,SLOT(doneSuccess()));
+	connect(&mergethread,SIGNAL(fail()),this,SLOT(doneFail()));
+	connect(&mergethread,SIGNAL(showpic(QString)),this,SLOT(ShowDonePicture(QString)));
+	connect(&mergethread,SIGNAL(showDoingPic(QString)),this,SLOT(ShowThumbnail(QString)));
+	mergethread.start();
+=======
+  mergethread.setMethod(method);
+  mergethread.setPath(pic_path);
+  setMergeThread(&mergethread);
+  connect(&mergethread,SIGNAL(done()),this,SLOT(doneSuccess()));
+  connect(&mergethread,SIGNAL(fail()),this,SLOT(doneFail()));
+  connect(&mergethread,SIGNAL(showpic(QString)),this,SLOT(ShowDonePicture(QString)));
+  connect(&mergethread,SIGNAL(showDoingPic(QString)),this,SLOT(ShowThumbnail(QString)));
+  mergethread.start();
+>>>>>>> .r18
+}
+QStringList BrowsePicture::SelectPicNameList(const QStringList &namelist)
+{
+  //设定选择条件
+  int start_row = ui.row_spinbox->value();
+  int start_col = ui.col_spinbox->value();
+  int end_row = ui.row_spinbox_2->value();
+  int end_col = ui.col_spinbox_2->value();
+
+  QString channel = ui.channel_cbox->currentText();
+  if (channel.contains("R",Qt::CaseInsensitive))
+  {
+    channel = "R";
+  }
+  else  if (channel.contains("G",Qt::CaseInsensitive))
+  {
+    channel = "G";
+  }
+  else  if (channel.contains("B",Qt::CaseInsensitive))
+  {
+    channel = "B";
+  }
+  else  if (channel.contains("混合",Qt::CaseInsensitive))
+  {
+    channel = "RGB";
+  }
+
+  int grey_start = ui.grey_start_spinbox->value();
+  int grey_end = ui.grey_end_spinbox->value();
+
+  QStringList list ;
+  list<< pic_path;
+
+  for (int i = 1; i < namelist.size(); ++i)
+  {
+    QStringList pic_info = AnalyticFileName(namelist[i]);
+
+    int row = pic_info[0].toInt();
+    int col = pic_info[1].toInt();
+    if(row >= start_row && row <= end_row && col >= start_col && col <= end_col)
+    {
+      list<<namelist[i];
+    }
+  }
+  return list;
+}
+
+
+bool BrowsePicture::ReadFile(QString path)
+<<<<<<< .mine
+	{
+		QFile file(path +"/" + "/log.txt");
+		if(!file.open(QIODevice::ReadWrite))
+			{
+				QMessageBox msg;
+				msg.setText("没有找到配置文件");
+				msg.exec();
+				return false;
+			}
+		QString line  = file.readLine();
+		QStringList list = line.split(" ");
+		method = list[0].toInt();
+		split_pic = list[1].toInt();
+		rgb_pic = list[2].toInt();
+		gray_pic = list[3].toInt();
+		return true;
+	}
+=======
+{
+  QFile file(path +"/" + "/log.txt");
+  if(!file.open(QIODevice::ReadWrite))
+  {
+    QMessageBox msg;
+    msg.setText("没有找到配置文件");
+    msg.exec();
+    return false;
+  }
+  method  = file.readLine().toInt();
+  return true;
+}
+>>>>>>> .r18
+
+
+void BrowsePicture::ShowDonePicture(QString path)
+{
+  QString filename = path;
+  int pos = path.lastIndexOf("/",-1);
+  filename.remove(0,pos + 1);
+  ShowThumbnail(path +"/Merge/" + filename);
+}
+
+void BrowsePicture::doneSuccess()
+{
+  QMessageBox msg;
+  msg.setText("处理完毕!");
+  msg.exec();
+}
+
+void BrowsePicture::doneFail()
+{
+  QMessageBox msg;
+  msg.setText("程序异常!");
+  msg.exec();
+}
+void BrowsePicture::setMergeThread(MyMergeThread *thread)
+{
+  //设定选择条件
+  int start_row = ui.row_spinbox->value();
+  int start_col = ui.col_spinbox->value();
+  int end_row = ui.row_spinbox_2->value();
+  int end_col = ui.col_spinbox_2->value();
+
+  QString channel = ui.channel_cbox->currentText();
+
+  int grey_start = ui.grey_start_spinbox->value();
+  int grey_end = ui.grey_end_spinbox->value();
+  thread->setMergeArea(start_row,start_col,end_row,end_col);
+  thread->setMergeChannel(channel);
+  thread->setMergeGray(grey_start,grey_end);
+}

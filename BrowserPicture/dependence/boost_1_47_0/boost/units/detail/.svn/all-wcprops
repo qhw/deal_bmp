@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail
+END
+dim_impl.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail/dim_impl.hpp
+END
+unscale.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail/unscale.hpp
+END
+static_rational_power.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail/static_rational_power.hpp
+END
+push_front_or_add.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail/push_front_or_add.hpp
+END
+absolute_impl.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail/absolute_impl.hpp
+END
+utility.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail/utility.hpp
+END
+push_front_if.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail/push_front_if.hpp
+END
+dimension_impl.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail/dimension_impl.hpp
+END
+conversion_impl.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail/conversion_impl.hpp
+END
+dimensionless_unit.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail/dimensionless_unit.hpp
+END
+cmath_impl.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail/cmath_impl.hpp
+END
+dimension_list.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail/dimension_list.hpp
+END
+one.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail/one.hpp
+END
+heterogeneous_conversion.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail/heterogeneous_conversion.hpp
+END
+prevent_redefinition.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail/prevent_redefinition.hpp
+END
+sort.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail/sort.hpp
+END
+linear_algebra.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail/linear_algebra.hpp
+END
+ordinal.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/BrowserPicture/!svn/ver/29/dependence/boost_1_47_0/boost/units/detail/ordinal.hpp
+END

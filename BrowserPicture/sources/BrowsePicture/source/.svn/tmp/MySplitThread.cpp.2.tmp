@@ -1,0 +1,313 @@
+/**@file
+*****************************************************************************
+* 版权所有(C) ???公司 CopyRight(2011 - ...)
+* @brief 内容摘要:
+* @date 2011/08/23
+* @note  修改记录: 
+1.修改注释格式,将tab转换为2个空格 [2011/08/23 15:34 fox]
+********************************************************************************/
+
+#include "stdafx.h"
+#include "MySplitThread.h"
+#include "managepic.h"
+#include "MySplitLevelTwoThread.h"
+MySplitThread::MySplitThread(void)
+{
+}
+
+void MySplitThread::run()
+{
+  SplitPic();
+}
+
+void MySplitThread::SplitPic()
+{
+  if(method == 0)
+  {
+    DoneByFirstMethod();
+  }else if(method == 1)
+  {
+    DoneBySecondMethod();
+  }else
+  {
+    DoneByThirdMethod();
+  }
+}
+
+
+void MySplitThread::DoneByFirstMethod()//split->rgb->gray
+{
+  SPLIT m_split;
+  m_split.setMethod(method);
+  emit showDoingPic(pic_path);
+  if(split_pic == 1)
+  {
+    if(m_split.init(split_row,split_col,pic_path.toLatin1().data()))
+    {
+      m_split.doSplit();
+      m_split.release();
+    }
+
+    if(rgb_pic == 1)
+    {
+      DoneByFirstMethod_RGB(m_split);
+      if(gray_pic == 1)
+      {
+        DoneByGray(m_split,1,grey);
+      }
+    }
+    emit showpic(pic_path);
+    emit done();
+  }else
+  {
+    if(rgb_pic == 1)
+    {
+      if(m_split.init(pic_path.toLatin1().data()))
+      {
+        m_split.savePicByR_G_B();
+        m_split.release();
+      }
+      if(gray_pic == 1)
+      {
+        DoneByGray(m_split,1,grey);
+      }
+      emit showpic(pic_path);
+      emit done();
+    }
+  }
+
+}
+void MySplitThread::DoneByFirstMethod_RGB(SPLIT m_split)
+{
+  ManagePic managePic;
+  QString tmpstr;
+  int pos = pic_path.lastIndexOf ("/",-1);
+  QString filename=pic_path;
+  filename.remove(0,pos +1);//获取文件的名
+  QStringList list = managePic.FindFile(filename+"/split/split");
+  QList<MySplitLevelTwoThread*>thread_list;
+  MySplitLevelTwoThread *splitRgbThread;
+  QStringList path_list;
+  int fileNumber = list.size() / THREAD_NUMBER;
+  for(int i = 1; i < list.size(); i++)
+  {
+    tmpstr = list[0] + "/" + list[i];
+    path_list.append(tmpstr);
+    if(path_list.size() > fileNumber || i + 1 >= list.size())
+    {
+        splitRgbThread = new MySplitLevelTwoThread;
+        thread_list.append(splitRgbThread);
+        splitRgbThread->setSpliter(m_split);
+        splitRgbThread->setDealFlag(1);
+        splitRgbThread->setPicPath(path_list);
+        splitRgbThread->start();
+        path_list.clear();
+    }
+  }
+  for(int i = 0; i < thread_list.size(); i++)
+  {
+    thread_list[i]->wait();
+  }
+  for(int i = 0; i < thread_list.size(); i++)
+  {
+    delete thread_list[i];
+  }
+}
+
+void MySplitThread::DoneByGray(SPLIT m_split,int method, int gray)
+{
+  ManagePic managePic;
+  QString tmpstr;
+  int pos = pic_path.lastIndexOf ("/",-1);
+  QString filename=pic_path;
+  filename.remove(0,pos +1);//获取文件的名
+  QStringList list;
+  if(method == 1)
+  {
+      list = managePic.FindFile(filename+"/split/rgb");
+  }else if(method == 2)
+  {
+     list = managePic.FindFile(filename+"/split/split");
+  }
+  QList<MySplitLevelTwoThread*>thread_list;
+  MySplitLevelTwoThread *splitGrayThread;
+  QStringList path_list;
+  int fileNumber = list.size() / THREAD_NUMBER;
+  for(int i = 1; i < list.size(); i++)
+  {
+    tmpstr = list[0] + "/" + list[i];
+    path_list.append(tmpstr);
+    if(path_list.size() > fileNumber  || i == list.size() - 1 )
+    {
+      splitGrayThread = new MySplitLevelTwoThread;
+      thread_list.append(splitGrayThread);
+      splitGrayThread->setSpliter(m_split);
+      splitGrayThread->setDealFlag(2);
+      splitGrayThread->setPicPath(path_list);
+      splitGrayThread->setGray(gray);
+      splitGrayThread->start();
+      path_list.clear();
+    }
+  }
+  for(int i = 0; i < thread_list.size(); i++)
+  {
+    thread_list[i]->wait();
+  }
+  for(int i = 0; i < thread_list.size(); i++)
+  {
+    delete thread_list[i];
+  }
+}
+void MySplitThread::DoneBySecondMethod()//rgb->split->gray
+{
+  SPLIT m_split;
+  m_split.setMethod(method);
+  emit showDoingPic(pic_path);
+  if(rgb_pic == 1)
+  {
+    if(m_split.init(pic_path.toLatin1().data()))
+    {
+      m_split.savePicByR_G_B();
+      m_split.release();
+    }
+    if(split_pic == 1)
+    {
+      DoneBySplit(m_split,1,split_row,split_col);
+      if(gray_pic == 1)
+      {
+        DoneByGray(m_split,2,grey);
+      }
+    }else if(gray_pic == 1)
+    {
+      DoneByGray(m_split,1,grey);
+    }
+    emit showpic(pic_path);
+    emit done();
+  }else if(split_pic == 1)
+  {
+    if(m_split.init(split_row,split_col,pic_path.toLatin1().data()))
+    {
+      m_split.doSplit();
+      m_split.release();
+    }
+    emit showpic(pic_path);
+    emit done();
+  }
+
+
+}
+
+void MySplitThread::DoneBySplit(SPLIT m_split,int method, int row,int col)
+{
+  ManagePic managePic;
+  QString tmpstr;
+  int pos = pic_path.lastIndexOf ("/",-1);
+  QString filename=pic_path;
+  filename.remove(0,pos +1);//获取文件的名
+  QStringList list;
+  if(method == 1)
+  {
+      list = managePic.FindFile(filename+"/split/rgb");
+  }else if(method == 2)
+  {
+      list = managePic.FindFile(filename+"/split/gray");
+  }
+  QList<MySplitLevelTwoThread*>thread_list;
+  MySplitLevelTwoThread *splitThread;
+  QStringList path_list;
+  int fileNumber = list.size() / THREAD_NUMBER;
+  for(int i = 1; i < list.size(); i++)
+  {
+    tmpstr = list[0] + "/" + list[i];
+    path_list.append(tmpstr);
+    if(path_list.size() > fileNumber || i + 1 >= list.size())
+    {
+      splitThread = new MySplitLevelTwoThread;
+      thread_list.append(splitThread);
+      splitThread->setSpliter(m_split);
+      splitThread->setDealFlag(0);
+      splitThread->setPicPath(path_list);
+      splitThread->setSplit(row,col);
+      splitThread->start();
+      path_list.clear();
+    }
+  }
+  for(int i = 0; i < thread_list.size(); i++)
+  {
+    thread_list[i]->wait();
+  }
+  for(int i = 0; i < thread_list.size(); i++)
+  {
+    delete thread_list[i];
+  }
+}
+
+void MySplitThread::DoneByThirdMethod()//rgb->gray->split
+{
+  SPLIT m_split;
+  m_split.setMethod(method);
+  emit showDoingPic(pic_path);
+  if(rgb_pic == 1)
+  {
+    if(m_split.init(pic_path.toLatin1().data()))
+    {
+      m_split.savePicByR_G_B();
+      m_split.release();
+    }
+    if(gray_pic == 1)
+    {
+      DoneByGray(m_split,1,grey);
+      if(split_pic == 1)
+      {
+        DoneBySplit(m_split,2,split_row,split_col);
+      }
+    }else if(split_pic == 1)
+    {
+      DoneBySplit(m_split,1,split_row,split_col);	
+    }
+    emit showpic(pic_path);
+    emit done();
+  }else if(split_pic == 1)
+  {
+    if(m_split.init(split_row,split_col,pic_path.toLatin1().data()))
+    {
+      m_split.doSplit();
+      m_split.release();
+    }
+    emit showpic(pic_path);
+    emit done();
+  }
+}
+
+void MySplitThread::setMethod(int method)
+{
+  this->method = method;
+}
+void MySplitThread::setPath(QString path)
+{
+  this->pic_path = path;
+}
+void MySplitThread::setSplitArea(int row, int col)
+{
+  this->split_row = row;
+  this->split_col = col;
+}
+void MySplitThread::setSplitGray(int gray)
+{
+  this->grey  = gray;
+}
+void MySplitThread::setSplit(int split)
+{
+  this->split_pic = split;
+}
+void MySplitThread::setRGB(int rgb)
+{
+  this->rgb_pic = rgb;
+}
+void MySplitThread::setGray(int gray)
+{
+  this->gray_pic = gray;
+}
+MySplitThread::~MySplitThread(void)
+{
+}

@@ -1,0 +1,1 @@
+xcopy "..\mSDK\bin\%1\%2*.dll" "..\bin\%1\" /Q /R /Y

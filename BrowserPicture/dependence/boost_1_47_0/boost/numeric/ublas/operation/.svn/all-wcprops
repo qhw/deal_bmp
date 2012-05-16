@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/operation
+END
+num_rows.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/operation/num_rows.hpp
+END
+size.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/operation/size.hpp
+END
+num_columns.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/operation/num_columns.hpp
+END
+c_array.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/operation/c_array.hpp
+END
+begin.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/operation/begin.hpp
+END
+end.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/operation/end.hpp
+END

@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icon/rotateleft.png</file>
+        <file>icon/rotateright.png</file>
+        <file>icon/zoomin.png</file>
+        <file>icon/zoomout.png</file>
+        <file>images/default.bmp</file>
+        <file>skin.qss</file>
+        <file>images/images0.jpg</file>
+        <file>images/hehua.png</file>
+    </qresource>
+</RCC>

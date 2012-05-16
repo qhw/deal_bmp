@@ -1,0 +1,79 @@
+/**@file
+*****************************************************************************
+* 版权所有(C) ???公司 CopyRight(2011 - ...)
+* @brief 内容摘要:
+* @date 2011/08/23
+* @note  修改记录: 
+1.修改注释格式,将tab转换为2个空格 [2011/08/23 15:34 fox]
+********************************************************************************/
+#include "stdafx.h"
+#include "browsepicture.h"
+#include <QtGui/QApplication>
+#include <QTextCodec>
+//#include "showpicture.h"
+   /*
+class Basic
+{
+public:
+  Basic(){ 
+    w = new int; *w = 1;
+  }
+  ~Basic(){ 
+    delete w; w = NULL;
+  }
+  int* w;
+protected:
+private:
+  Basic(const Basic&){}
+};
+
+void fun(Basic a)
+{
+  *(a.w) = 10;
+}
+
+void Test()
+{
+  Basic b;
+  fun(b);
+  if(b.w)
+    *(b.w) = 20;
+}
+//*/
+
+#include "split/split_picture.h"
+#include "split/split_rgb.h"
+#include <boost/foreach.hpp>
+int main(int argc, char *argv[])
+{
+  //Test();
+  /*
+  //split::SplitRGB ss("../chuangjing.bmp");
+  //split::FileNameMap _map;
+  //ss.Split(_map);
+  //split::SplitPicture s("../bih.bmp");//chuangjing.bmp");//
+  //split::FileNameList list;
+  //s.Split(2, 2, list);
+  //BOOST_FOREACH(std::string& path, list)
+  //{
+  //  split::SplitRGB ss(path);
+  //  split::FileNameMap _map;
+  //  //ss.Split(_map);
+  //}
+  //return 0;
+  //*/
+  QApplication a(argc, argv);
+
+  QApplication::addLibraryPath("plugins");//在其他机子上显示图片
+
+  QTextCodec::setCodecForCStrings(QTextCodec::codecForName("System"));
+  QTextCodec::setCodecForLocale(QTextCodec::codecForName("System"));
+  QTextCodec::setCodecForTr(QTextCodec::codecForName("System"));
+
+  BrowsePicture w;
+ // w.setObjectName("BrowsePicture");
+  //ShowPicture w;
+   // w.setStyleSheet(QString::fromUtf8("border-image: url(:/images/hehua.png); "));
+  w.show();
+  return a.exec();
+}

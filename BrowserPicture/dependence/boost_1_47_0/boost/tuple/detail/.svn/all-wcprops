@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/tuple/detail
+END
+tuple_basic.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/tuple/detail/tuple_basic.hpp
+END
+tuple_basic_no_partial_spec.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/tuple/detail/tuple_basic_no_partial_spec.hpp
+END

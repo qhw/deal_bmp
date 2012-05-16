@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas
+END
+exception.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/exception.hpp
+END
+tags.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/tags.hpp
+END
+operation.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/operation.hpp
+END
+vector.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/vector.hpp
+END
+functional.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/functional.hpp
+END
+vector_proxy.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/vector_proxy.hpp
+END
+matrix.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/matrix.hpp
+END
+storage.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/storage.hpp
+END
+matrix_proxy.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/matrix_proxy.hpp
+END
+traits.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/traits.hpp
+END
+io.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/io.hpp
+END
+triangular.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/triangular.hpp
+END
+vector_of_vector.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/vector_of_vector.hpp
+END
+assignment.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/assignment.hpp
+END
+doxydoc.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/doxydoc.hpp
+END
+symmetric.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/symmetric.hpp
+END
+operation_sparse.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/operation_sparse.hpp
+END
+banded.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/banded.hpp
+END
+vector_sparse.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/vector_sparse.hpp
+END
+lu.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/lu.hpp
+END
+hermitian.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/hermitian.hpp
+END
+fwd.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/fwd.hpp
+END
+vector_expression.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/vector_expression.hpp
+END
+blas.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/blas.hpp
+END
+matrix_sparse.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/matrix_sparse.hpp
+END
+storage_sparse.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/storage_sparse.hpp
+END
+matrix_expression.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/matrix_expression.hpp
+END
+operations.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/operations.hpp
+END
+operation_blocked.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/operation_blocked.hpp
+END
+expression_types.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/expression_types.hpp
+END

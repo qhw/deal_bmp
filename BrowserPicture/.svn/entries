@@ -1,0 +1,83 @@
+10
+
+dir
+55
+https://fox:8443/svn/BrowserPicture
+https://fox:8443/svn/BrowserPicture
+
+
+
+2011-09-02T07:34:06.937500Z
+55
+eric
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+7dae088a-ded5-a94f-9395-ae64d6fbd0e4
+
+build
+dir
+
+sources
+dir
+
+说明.txt
+file
+
+
+
+
+2011-08-11T01:08:06.046875Z
+7d5b3ccd2c9629b2d3d6b27c5e889a66
+2011-08-08T01:39:40.575125Z
+1
+hero
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+70
+
+project
+dir
+
+bin
+dir
+
+docs
+dir
+
+dependence
+dir
+
+mSDK
+dir
+

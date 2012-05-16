@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/traits
+END
+iterator_type.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/traits/iterator_type.hpp
+END
+c_array.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/traits/c_array.hpp
+END
+const_iterator_type.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/BrowserPicture/!svn/ver/34/dependence/boost_1_47_0/boost/numeric/ublas/traits/const_iterator_type.hpp
+END

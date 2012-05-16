@@ -1,0 +1,58 @@
+/**@file
+*****************************************************************************
+* 版权所有(C) ???公司 CopyRight(2011 - ...)
+* @brief 内容摘要:
+* @date 2011/08/23
+* @note  修改记录: 
+1.修改注释格式,将tab转换为2个空格 [2011/08/23 15:34 fox]
+********************************************************************************/
+#include "stdafx.h"
+#include "browsepicture.h"
+#include <QtGui/QApplication>
+#include <QTextCodec>
+//#include "showpicture.h"
+//*
+class Basic
+{
+public:
+  Basic(){ 
+    w = new int; *w = 1;
+  }
+  ~Basic(){ 
+    delete w; w = NULL;
+  }
+  int* w;
+protected:
+private:
+  Basic(const Basic&){}
+};
+
+void fun(Basic a)
+{
+  *(a.w) = 10;
+}
+
+void Test()
+{
+  Basic b;
+  fun(b);
+  if(b.w)
+    *(b.w) = 20;
+}
+//*/
+int main(int argc, char *argv[])
+{
+  //Test();
+  QApplication a(argc, argv);
+
+  QApplication::addLibraryPath("plugins");//在其他机子上显示图片
+
+  QTextCodec::setCodecForCStrings(QTextCodec::codecForName("System"));
+  QTextCodec::setCodecForLocale(QTextCodec::codecForName("System"));
+  QTextCodec::setCodecForTr(QTextCodec::codecForName("System"));
+
+  BrowsePicture w;
+  //ShowPicture w;
+  w.show();
+  return a.exec();
+}

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/filesystem/v2
+END
+convenience.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/filesystem/v2/convenience.hpp
+END
+path.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/filesystem/v2/path.hpp
+END
+exception.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/filesystem/v2/exception.hpp
+END
+fstream.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/filesystem/v2/fstream.hpp
+END
+operations.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/filesystem/v2/operations.hpp
+END
+config.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/filesystem/v2/config.hpp
+END

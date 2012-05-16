@@ -1,0 +1,105 @@
+/**@file
+*****************************************************************************
+* 版权所有(C) 高迪未来(北京)科技有限公司 CopyRight(2011 - ...)
+* @brief 内容摘要:
+* @date 2011/08/23
+* @note  修改记录: 
+1.修改注释格式,将tab转换为2个空格 [2011/08/23 15:34 fox]
+********************************************************************************/
+#ifndef  MYMERGETHREAD_H_
+#define  MYMERGETHREAD_H_
+
+#include<QThread>
+#include "split/SPLIT.h"
+
+/**
+* 线程操作图像自动合并的
+* @author Eric
+* @date 2011-8-18
+*/
+class MyMergeThread:public QThread
+<<<<<<< .mine
+	{
+	Q_OBJECT
+	public:
+		MyMergeThread(void);
+		void run();
+		~MyMergeThread(void);
+		void setMethod(int method);
+    void setSplit(int);
+    void setRGB(int);
+    void setGray(int);
+		void setPath(QString);
+		void setMergeArea(int startrow,int startcol,int endrow, int endcol);
+		void setMergeChannel(QString rgb);
+		void setMergeGray(int startgrey, int endgrey);
+=======
+{
+  Q_OBJECT
+public:
+  MyMergeThread(void);
+  void run();
+  ~MyMergeThread(void);
+  void setMethod(int method);
+  void setPath(QString);
+  void setMergeArea(int startrow,int startcol,int endrow, int endcol);
+  void setMergeChannel(QString rgb);
+  void setMergeGray(int startgrey, int endgrey);
+>>>>>>> .r18
+signals:
+  void done();
+  void showpic(QString);//显示处理完毕的图片
+  void showDoingPic(QString);//显示正在处理的图片
+  public slots:
+    void MergePic();
+private:
+  /************************************************************************/
+  /* split->rgb->gray方式分割后按照给定方式显示
+  */
+  /************************************************************************/
+  bool mergePicByCondition_FirstMethod(SPLIT m_split);
+  bool mergePicByCondition_FirstSplit(SPLIT m_split);
+  bool mergePicByCondition_rgb(SPLIT m_split);
+  bool mergePicByCondition_gray(SPLIT m_split);
+  bool mergePicByCondition_Split(SPLIT m_split);
+  /************************************************************************/
+  /* rgb->split->gray方式分割后按照给定方式显示
+  */
+  /************************************************************************/
+  bool mergePicByCondition_SecondMethod(SPLIT m_split);
+  /************************************************************************/
+  /* rgb->gray->split方式分割后按照给定方式显示
+  */
+  /************************************************************************/
+  bool mergePicByCondition_ThirdMethod(SPLIT m_split);
+<<<<<<< .mine
+	private:
+		SPLIT mSpliter;
+		int method;
+    int split_pic;
+    int rgb_pic;
+    int gray_pic;
+		QString pic_path;
+		int start_row;
+		int start_col;
+		int end_row;
+		int end_col;
+		QString channel;
+		int grey_start;
+		int grey_end;
+	};
+=======
+private:
+  SPLIT mSpliter;
+  int method;
+  QString pic_path;
+  int start_row;
+  int start_col;
+  int end_row;
+  int end_col;
+  QString channel;
+  int grey_start;
+  int grey_end;
+};
+>>>>>>> .r18
+#endif

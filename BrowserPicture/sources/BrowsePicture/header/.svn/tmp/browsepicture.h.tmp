@@ -1,0 +1,158 @@
+/**@file
+*****************************************************************************
+* 版权所有(C) 高迪未来(北京)科技有限公司 CopyRight(2011 - ...)
+* @brief 内容摘要:
+* @date 2011/08/23
+* @note  修改记录: 
+1.修改注释格式,将tab转换为2个空格 [2011/08/23 15:34 fox]
+********************************************************************************/
+#ifndef BROWSEPICTURE_H
+#define BROWSEPICTURE_H
+
+#include <QtGui/QMainWindow>
+#include "ui_browsepicture.h"
+#include "MyAutoMergeThread.h"
+#include "MyMergeThread.h"
+#include "MySplitThread.h"
+#pragma  comment(lib,"DealPicture.lib")
+
+class View;
+class PicBlock;
+class SplitDlg;
+/**
+* 图片浏览程序，此类为主界面，显示布局
+* @author Hero
+* @date 2011年8月4日
+*/
+class BrowsePicture : public QMainWindow
+{
+  Q_OBJECT
+
+public:
+  BrowsePicture(QWidget *parent = 0, Qt::WFlags flags = 0);
+  ~BrowsePicture();
+public slots:
+  /***********************槽函数*************************************************/
+  void ButtonClicked();
+  void ActionTriggerd();
+  void splitPic(int,QString,int,int,int,int,int,int);
+  /*显示处理合并完得图像*/
+  void ShowDonePicture(QString);
+  void doneSuccess();
+  void doneFail();
+  bool ShowThumbnail(QString filename);
+private:
+<<<<<<< .mine
+  Ui::BrowsePictureClass ui;
+  View *viewport;
+  QGraphicsScene *scene;
+	//PicBlock *item;
+	MyAutoMergeThread automergethread;
+	MySplitThread  splitthread;
+	MyMergeThread mergethread;
+	PicBlock *item;
+ // QGraphicsItem *item;
+  SPLIT mSpliter;
+  int method;
+  int split_pic;
+  int rgb_pic;
+  int gray_pic;
+  public slots:
+    /************************************************************************/
+    /* @槽函数
+    */
+    /************************************************************************/
+    void ButtonClicked();
+    void ActionTriggerd();
+	void splitPic(int,QString,int,int,int,int,int,int);
+	/************************************************************************/
+	/* 显示处理合并完得图像
+	*/
+	/************************************************************************/
+	void ShowDonePicture(QString);
+	void doneSuccess();
+	void doneFail();
+	bool ShowThumbnail(QString filename);
+private:
+  /************************************************************************/
+  /* @初始化设置
+=======
+  /**
+  * @brief 初始化设置
+>>>>>>> .r18
+  */
+  void Init();
+  /**
+  * @brief 设置场景
+  * @param [in] dirpath 
+  * @return void 
+  */
+  void PopulateScene(const QStringList &dirpath);
+  /**
+  * @brief 系统事件
+  * @param [in] event
+  */
+  void resizeEvent(QResizeEvent *event);
+  /**
+  * @brief 打开文件
+  */
+  void OpenDir();
+  QString OpenFile();
+
+  bool SetPicInfo(QStringList list);
+  /**
+  * @brief 根据设定选择出需要显示的图片列表
+  * @param [in] namelist 
+  * @return QStringList 
+  */
+  QStringList SelectPicNameList(const QStringList &namelist);
+  /**
+  * @brief 解析文件名
+  * @param [in] & 
+  * @return QStringList 
+  */
+  QStringList AnalyticFileName(const QString & );
+  /**
+  * @brief 检查文件夹下是否有正确的图片
+  * @param [in] & 
+  * @return bool 
+  */
+  bool SafeCkeckDir(const QString &);
+  /**
+  * @brief 打开分割图片对话框
+  * @return void 
+  */
+  void OpenSplitDialog();
+  /**
+  * @brief 显示设定好的图片
+  * @return void 
+  */
+  void ShowImage();
+  /**
+  * @brief 读取信息文件
+  * @param [in] path 
+  * @return bool 
+  */
+  bool ReadFile(QString path);
+  /**
+  * @brief 给手动合并传参数
+  * @param [in] thead 
+  * @return void 
+  */
+  void setMergeThread(MyMergeThread *thead);
+private:
+  QString pic_path;
+  Ui::BrowsePictureClass ui;
+  MyAutoMergeThread automergethread;
+  MySplitThread  splitthread;
+  MyMergeThread mergethread;
+  SPLIT mSpliter;
+  View *viewport;
+  QGraphicsScene *scene;
+  PicBlock *item;
+  //PicBlock *item;
+  //QGraphicsItem *item;
+  int method;
+};
+
+#endif // BROWSEPICTURE_H

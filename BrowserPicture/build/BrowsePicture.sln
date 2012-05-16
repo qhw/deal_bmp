@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BrowsePicture", "..\project\BrowsePicture.vcproj", "{D360D0D7-7F26-4B9F-A5F5-7AC0D6E5615E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5B9B4AE7-2C41-44A1-AE60-7A9E26F3285B} = {5B9B4AE7-2C41-44A1-AE60-7A9E26F3285B}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DealPicture", "..\project\DealPicture.vcproj", "{5B9B4AE7-2C41-44A1-AE60-7A9E26F3285B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D360D0D7-7F26-4B9F-A5F5-7AC0D6E5615E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D360D0D7-7F26-4B9F-A5F5-7AC0D6E5615E}.Debug|Win32.Build.0 = Debug|Win32
+		{D360D0D7-7F26-4B9F-A5F5-7AC0D6E5615E}.Release|Win32.ActiveCfg = Release|Win32
+		{D360D0D7-7F26-4B9F-A5F5-7AC0D6E5615E}.Release|Win32.Build.0 = Release|Win32
+		{5B9B4AE7-2C41-44A1-AE60-7A9E26F3285B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5B9B4AE7-2C41-44A1-AE60-7A9E26F3285B}.Debug|Win32.Build.0 = Debug|Win32
+		{5B9B4AE7-2C41-44A1-AE60-7A9E26F3285B}.Release|Win32.ActiveCfg = Release|Win32
+		{5B9B4AE7-2C41-44A1-AE60-7A9E26F3285B}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/lib
+END
+libboost_date_time-vc90-mt-1_47.lib
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/lib/libboost_date_time-vc90-mt-1_47.lib
+END
+libboost_filesystem-vc90-mt-gd-1_47.lib
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/lib/libboost_filesystem-vc90-mt-gd-1_47.lib
+END
+libboost_system-vc90-mt-gd-1_47.lib
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/lib/libboost_system-vc90-mt-gd-1_47.lib
+END
+libboost_thread-vc90-mt-gd-1_47.lib
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/lib/libboost_thread-vc90-mt-gd-1_47.lib
+END
+libboost_date_time-vc90-mt-gd-1_47.lib
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/lib/libboost_date_time-vc90-mt-gd-1_47.lib
+END
+libboost_filesystem-vc90-mt-1_47.lib
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/lib/libboost_filesystem-vc90-mt-1_47.lib
+END
+libboost_system-vc90-mt-1_47.lib
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/lib/libboost_system-vc90-mt-1_47.lib
+END
+libboost_thread-vc90-mt-1_47.lib
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/lib/libboost_thread-vc90-mt-1_47.lib
+END

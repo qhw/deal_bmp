@@ -1,0 +1,569 @@
+/**@file
+*****************************************************************************
+* 版权所有(C) 高迪未来(北京)科技有限公司 CopyRight(2011 - ...)
+* @brief 内容摘要:
+* @date 2011/08/23
+* @note  修改记录: 
+1.修改注释格式,将tab转换为2个空格 [2011/08/23 15:34 fox]
+********************************************************************************/
+#include "stdafx.h"
+#include "MyMergeThread.h"
+#include "managepic.h"
+
+MyMergeThread::MyMergeThread(void)
+{
+}
+
+void MyMergeThread::run()
+{
+  MergePic();
+}
+
+void MyMergeThread::MergePic()
+{
+  if(method == 0)
+  {
+    mergePicByCondition_FirstMethod(mSpliter);
+  }else if(method == 1)
+  {
+    mergePicByCondition_SecondMethod(mSpliter);
+  }else if(method == 2)
+  {
+    mergePicByCondition_ThirdMethod(mSpliter);
+  }
+}
+
+
+bool MyMergeThread::mergePicByCondition_FirstMethod(SPLIT m_split)
+<<<<<<< .mine
+{
+  if(gray_pic == 1)
+  {
+    if(mergePicByCondition_gray(m_split))
+    {
+      if(rgb_pic == 1)
+      {
+        if(mergePicByCondition_rgb(m_split))
+        {
+          if(split_pic == 1)
+          {
+            if(mergePicByCondition_FirstSplit(m_split))
+            {
+              emit showpic(pic_path);
+              emit done();
+            }
+          }
+        }
+      }
+    }
+  }else
+  {
+    if(rgb_pic == 1)
+    {
+      if(mergePicByCondition_rgb(m_split))
+      {
+        if(split_pic == 1)
+        {
+          if(mergePicByCondition_FirstSplit(m_split))
+          {
+            emit showpic(pic_path);
+            emit done();
+          }
+        }
+      }
+    }else
+    {
+      if(split_pic == 1)
+      {
+        if(mergePicByCondition_FirstSplit(m_split))
+        {
+          emit showpic(pic_path);
+          emit done();
+        }
+      }
+    }
+  }
+  //if(mergePicByCondition_gray(m_split))
+  //{
+  //  if(mergePicByCondition_rgb(m_split))
+  //  {
+  //    if(mergePicByCondition_FirstSplit(m_split))
+  //    {
+  //      emit showpic(pic_path);
+  //      emit done();
+  //    }
+  //  }
+  //}
+  return true;
+}
+=======
+{
+  if(mergePicByCondition_gray(m_split))
+  {
+    if(mergePicByCondition_rgb(m_split))
+    {
+      if(mergePicByCondition_FirstSplit(m_split))
+      {
+        emit showpic(pic_path);
+        emit done();
+      }
+    }
+  }
+  return true;
+}
+>>>>>>> .r18
+bool MyMergeThread::mergePicByCondition_SecondMethod(SPLIT m_split)
+<<<<<<< .mine
+{
+  if(gray_pic == 1)
+  {
+    if(mergePicByCondition_gray(m_split))
+    {
+      if(split_pic == 1)
+      {
+        if(mergePicByCondition_Split(m_split))
+        {
+          if(rgb_pic == 1)
+          {
+            if(mergePicByCondition_rgb(m_split))
+            {
+              emit showpic(pic_path);
+              emit done();
+            }
+          }
+        }
+      }else
+      {
+        if(rgb_pic == 1)
+        {
+          if(mergePicByCondition_rgb(m_split))
+          {
+            emit showpic(pic_path);
+            emit done();
+          }
+        }
+      }
+    }
+  }else
+  {
+    if(split_pic == 1)
+    {
+      if(mergePicByCondition_Split(m_split))
+      {
+        if(rgb_pic == 1)
+        {
+          if(mergePicByCondition_rgb(m_split))
+          {
+            emit showpic(pic_path);
+            emit done();
+          }
+        }
+      }
+    }else
+    {
+      if(rgb_pic == 1)
+      {
+        if(mergePicByCondition_rgb(m_split))
+        {
+          emit showpic(pic_path);
+          emit done();
+        }
+      }
+    }
+  }
+  /*if(mergePicByCondition_gray(m_split))
+  {
+    if(mergePicByCondition_Split(m_split))
+    {
+      if(mergePicByCondition_rgb(m_split))
+      {
+        emit showpic(pic_path);
+        emit done();
+      }
+    }
+  }*/
+  return true;
+}
+=======
+{
+  if(mergePicByCondition_gray(m_split))
+  {
+    if(mergePicByCondition_Split(m_split))
+    {
+      if(mergePicByCondition_rgb(m_split))
+      {
+        emit showpic(pic_path);
+        emit done();
+      }
+    }
+  }
+  return true;
+}
+>>>>>>> .r18
+bool MyMergeThread::mergePicByCondition_ThirdMethod(SPLIT m_split)
+<<<<<<< .mine
+{
+  if(split_pic == 1)
+  {
+    if(mergePicByCondition_Split(m_split))
+    {
+      if(gray_pic == 1)
+      {
+        if(mergePicByCondition_gray(m_split))
+        {
+          if(rgb_pic == 1)
+          {
+            if(mergePicByCondition_rgb(m_split))
+            {
+              emit showpic(pic_path);
+              emit done();
+            }
+          }
+        }
+      }else if(rgb_pic == 1)
+      {
+        if(mergePicByCondition_rgb(m_split))
+        {
+          emit showpic(pic_path);
+          emit done();
+        }
+      }
+    }
+  }else
+  {
+    if(gray_pic == 1)
+    {
+      if(mergePicByCondition_gray(m_split))
+      {
+        if(rgb_pic == 1)
+        {
+          if(mergePicByCondition_rgb(m_split))
+          {
+            emit showpic(pic_path);
+            emit done();
+          }
+        }
+      }
+    }else if(rgb_pic == 1)
+    {
+      if(mergePicByCondition_rgb(m_split))
+      {
+        emit showpic(pic_path);
+        emit done();
+      }
+    }
+  }
+ /* if(mergePicByCondition_Split(m_split))
+  {
+    if(mergePicByCondition_gray(m_split))
+    {
+      if(mergePicByCondition_rgb(m_split))
+      {
+        emit showpic(pic_path);
+        emit done();
+      }
+    }
+  }*/
+  return true;
+}
+=======
+{
+  if(mergePicByCondition_Split(m_split))
+  {
+    if(mergePicByCondition_gray(m_split))
+    {
+      if(mergePicByCondition_rgb(m_split))
+      {
+        emit showpic(pic_path);
+        emit done();
+      }
+    }
+  }
+  return true;
+}
+>>>>>>> .r18
+bool MyMergeThread::mergePicByCondition_Split(SPLIT m_split)
+<<<<<<< .mine
+{
+  ManagePic managePic;
+  QString tmpstr;
+  QStringList list;
+  if(method == 1)
+  {
+    if(gray_pic == 1)
+    {
+      list = managePic.FindFile(pic_path+"/Merge/split");
+    }else
+    {
+      list = managePic.FindFile(pic_path+"/split/split");
+    }
+  }else if(method == 2)
+  {
+    list = managePic.FindFile(pic_path+"/split/split");
+  }
+  for(int i = 1; i < list.size(); i++)
+  {
+    if(list[i].left(13) != "L00000_C00000") continue;
+    tmpstr = list[0] + "/" + list[i];
+    emit showDoingPic(tmpstr);
+    if(m_split.init(tmpstr.toLatin1().data()))
+    {
+      m_split.mergeSplit(start_row,start_col,end_row,end_col);
+      m_split.release();
+    }
+  }
+  return true;
+}
+=======
+{
+  ManagePic managePic;
+  QString tmpstr;
+  QStringList list;
+  if(method == 1)
+  {
+    list = managePic.FindFile(pic_path+"/Merge/split");
+  }else if(method == 2)
+  {
+    list = managePic.FindFile(pic_path+"/split/split");
+  }
+  for(int i = 1; i < list.size(); i++)
+  {
+    if(list[i].left(13) != "L00000_C00000") continue;
+    tmpstr = list[0] + "/" + list[i];
+    emit showDoingPic(tmpstr);
+    if(m_split.init(tmpstr.toLatin1().data()))
+    {
+      m_split.mergeSplit(start_row,start_col,end_row,end_col);
+      m_split.release();
+    }
+  }
+  return true;
+}
+>>>>>>> .r18
+bool MyMergeThread::mergePicByCondition_FirstSplit(SPLIT m_split)
+<<<<<<< .mine
+{	
+  ManagePic managePic;
+  QString tmpstr;
+  QStringList list;
+  if(method == 0)
+  {
+    if(gray_pic == 1 || rgb_pic == 1)
+    {
+       list = managePic.FindFile(pic_path+"/Merge/split");
+    }else
+    {
+       list = managePic.FindFile(pic_path+"/split/split");
+    }
+  }
+  if(list.size() > 1)
+  {
+    tmpstr = list[0] + "/" + list[1];
+    emit showDoingPic(tmpstr);
+    if(m_split.init(tmpstr.toLatin1().data()))
+    {
+      m_split.mergeSplit(start_row,start_col,end_row,end_col);
+      m_split.release();
+    }
+  }
+  return true;
+}
+=======
+{	
+  ManagePic managePic;
+  QString tmpstr;
+  QStringList list;
+  if(method != 2)
+  {
+    list = managePic.FindFile(pic_path+"/Merge/split");
+  }else
+  {
+    list = managePic.FindFile(pic_path+"/split/split");
+  }
+
+  if(list.size() > 1)
+  {
+    tmpstr = list[0] + "/" + list[1];
+    emit showDoingPic(tmpstr);
+    if(m_split.init(tmpstr.toLatin1().data()))
+    {
+      m_split.mergeSplit(start_row,start_col,end_row,end_col);
+      m_split.release();
+    }
+  }
+  return true;
+}
+>>>>>>> .r18
+bool MyMergeThread::mergePicByCondition_rgb(SPLIT m_split)
+{
+  ManagePic managePic;
+  QString tmpstr;
+
+<<<<<<< .mine
+  QStringList list;
+  if(method == 0)
+  {
+    if(gray_pic == 1)
+    {
+        list = managePic.FindFile(pic_path+"/Merge/rgb");
+    }else
+    {
+        list = managePic.FindFile(pic_path+"/split/rgb");
+    }
+  }
+  if(method == 1 || method == 2)
+  {
+    if(split_pic == 1 || gray_pic == 1)
+    {
+      list = managePic.FindFile(pic_path+"/Merge/rgb");
+    }else
+    {
+      list = managePic.FindFile(pic_path+"/split/rgb");
+    }
+  }
+=======
+  QStringList list;
+  list = managePic.FindFile(pic_path+"/Merge/rgb");
+>>>>>>> .r18
+
+  if (channel.contains("R",Qt::CaseInsensitive))
+  {
+    channel = "R";
+  }
+  else  if (channel.contains("G",Qt::CaseInsensitive))
+  {
+    channel = "G";
+  }
+  else  if (channel.contains("B",Qt::CaseInsensitive))
+  {
+    channel = "B";
+  }
+  else  if (channel.contains("混合",Qt::CaseInsensitive))
+  {
+    channel = "RGB";
+  }
+
+  for(int i = 1; i < list.size(); i++)
+  {
+    if(list[i].left(1) != "B") continue;
+    tmpstr = list[0] + "/" + list[i];
+    emit showDoingPic(tmpstr);
+    if(m_split.init(tmpstr.toLatin1().data()))
+    {
+      m_split.mergeRGB(channel.toLatin1().data());
+      m_split.release();
+    }
+  }
+  return true;
+}
+bool MyMergeThread::mergePicByCondition_gray(SPLIT m_split)
+<<<<<<< .mine
+{
+  ManagePic managePic;
+  QString tmpstr;
+  QStringList list;
+  if(method != 2)
+  {
+    list = managePic.FindFile(pic_path+"/split/gray");
+  }else if(method == 2)
+  {
+    if(split_pic == 1)
+    {
+        list = managePic.FindFile(pic_path+"/Merge/gray");
+    }else
+    {
+        list = managePic.FindFile(pic_path+"/split/gray");
+    }
+  }
+  for(int i = 1; i < list.size(); i++)
+  {
+    if(list[i].left(1) != "0") continue;
+    tmpstr = list[0] + "/" + list[i];
+    emit showDoingPic(tmpstr);
+    if(m_split.init(tmpstr.toLatin1().data()))
+    {
+      m_split.mergeGray(grey_start,grey_end);
+      m_split.release();
+    }
+  }
+  return true;
+}
+=======
+{
+  ManagePic managePic;
+  QString tmpstr;
+  QStringList list;
+  if(method != 2)
+  {
+    list = managePic.FindFile(pic_path+"/split/gray");
+  }else if(method == 2)
+  {
+    list = managePic.FindFile(pic_path+"/Merge/gray");
+  }
+  for(int i = 1; i < list.size(); i++)
+  {
+    if(list[i].left(1) != "0") continue;
+    tmpstr = list[0] + "/" + list[i];
+    emit showDoingPic(tmpstr);
+    if(m_split.init(tmpstr.toLatin1().data()))
+    {
+      m_split.mergeGray(grey_start,grey_end);
+      m_split.release();
+    }
+  }
+  return true;
+}
+>>>>>>> .r18
+void MyMergeThread::setMethod(int method)
+<<<<<<< .mine
+{
+  mSpliter.setMethod(method);
+  this->method = method;
+}
+void MyMergeThread::setSplit(int split)
+{
+   mSpliter.setSplit(split);
+   this->split_pic = split;
+}
+
+void MyMergeThread::setRGB(int rgb)
+{
+  mSpliter.setRGB(rgb);
+   this->rgb_pic = rgb;
+}
+
+void MyMergeThread::setGray(int gray)
+{
+  mSpliter.setGray(gray);
+  this->gray_pic = gray;
+}
+=======
+{
+  mSpliter.setMethod(method);
+  this->method = method;
+}
+>>>>>>> .r18
+void MyMergeThread::setPath(QString path)
+{
+  this->pic_path = path;
+}
+void MyMergeThread::setMergeArea(int startrow,int startcol,int endrow, int endcol)
+{
+  this->start_row = startrow;
+  this->start_col = startcol;
+  this->end_row = endrow;
+  this->end_col = endcol;
+
+}
+void MyMergeThread::setMergeChannel(QString rgb)
+{
+  this->channel = rgb;
+}
+void MyMergeThread::setMergeGray(int startgrey, int endgrey)
+{
+  this->grey_start = startgrey;
+  this->grey_end = endgrey;
+}
+MyMergeThread::~MyMergeThread(void)
+{
+}

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/BrowserPicture/!svn/ver/53/sources/DealPicture/split
+END
+SPLIT.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/BrowserPicture/!svn/ver/56/sources/DealPicture/split/SPLIT.h
+END
+split_function.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/BrowserPicture/!svn/ver/50/sources/DealPicture/split/split_function.cpp
+END
+split_gray.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/BrowserPicture/!svn/ver/50/sources/DealPicture/split/split_gray.h
+END
+split_rgb.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/BrowserPicture/!svn/ver/50/sources/DealPicture/split/split_rgb.cpp
+END
+split_picture.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/BrowserPicture/!svn/ver/51/sources/DealPicture/split/split_picture.cpp
+END
+split_define.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/BrowserPicture/!svn/ver/50/sources/DealPicture/split/split_define.h
+END
+split_rgb.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/BrowserPicture/!svn/ver/46/sources/DealPicture/split/split_rgb.h
+END
+split_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/BrowserPicture/!svn/ver/50/sources/DealPicture/split/split_base.h
+END
+SPLIT.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/BrowserPicture/!svn/ver/56/sources/DealPicture/split/SPLIT.cpp
+END
+split_picture.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/BrowserPicture/!svn/ver/46/sources/DealPicture/split/split_picture.h
+END
+split_gray.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/BrowserPicture/!svn/ver/50/sources/DealPicture/split/split_gray.cpp
+END

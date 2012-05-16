@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator
+END
+interoperable.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator/interoperable.hpp
+END
+is_lvalue_iterator.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator/is_lvalue_iterator.hpp
+END
+iterator_categories.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator/iterator_categories.hpp
+END
+filter_iterator.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator/filter_iterator.hpp
+END
+counting_iterator.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator/counting_iterator.hpp
+END
+iterator_adaptor.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator/iterator_adaptor.hpp
+END
+is_readable_iterator.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator/is_readable_iterator.hpp
+END
+indirect_iterator.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator/indirect_iterator.hpp
+END
+zip_iterator.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator/zip_iterator.hpp
+END
+iterator_facade.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator/iterator_facade.hpp
+END
+function_input_iterator.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator/function_input_iterator.hpp
+END
+iterator_traits.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator/iterator_traits.hpp
+END
+permutation_iterator.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator/permutation_iterator.hpp
+END
+iterator_archetypes.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator/iterator_archetypes.hpp
+END
+reverse_iterator.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator/reverse_iterator.hpp
+END
+new_iterator_tests.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator/new_iterator_tests.hpp
+END
+transform_iterator.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator/transform_iterator.hpp
+END
+iterator_concepts.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/BrowserPicture/!svn/ver/27/dependence/boost_1_47_0/boost/iterator/iterator_concepts.hpp
+END

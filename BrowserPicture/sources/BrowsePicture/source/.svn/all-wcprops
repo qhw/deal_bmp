@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/BrowserPicture/!svn/ver/55/sources/BrowsePicture/source
+END
+progress.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/BrowserPicture/!svn/ver/56/sources/BrowsePicture/source/progress.cpp
+END
+MyAutoMergeLevelTwoThread.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/BrowserPicture/!svn/ver/26/sources/BrowsePicture/source/MyAutoMergeLevelTwoThread.cpp
+END
+view.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/BrowserPicture/!svn/ver/38/sources/BrowsePicture/source/view.cpp
+END
+MySplitLevelTwoThread.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/BrowserPicture/!svn/ver/31/sources/BrowsePicture/source/MySplitLevelTwoThread.cpp
+END
+MyMergeLevelTwoThread.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/BrowserPicture/!svn/ver/31/sources/BrowsePicture/source/MyMergeLevelTwoThread.cpp
+END
+Argument.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/BrowserPicture/!svn/ver/31/sources/BrowsePicture/source/Argument.cpp
+END
+splitdlg.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/BrowserPicture/!svn/ver/56/sources/BrowsePicture/source/splitdlg.cpp
+END
+managepic.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/BrowserPicture/!svn/ver/44/sources/BrowsePicture/source/managepic.cpp
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/BrowserPicture/!svn/ver/51/sources/BrowsePicture/source/main.cpp
+END
+PicBlock.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/BrowserPicture/!svn/ver/20/sources/BrowsePicture/source/PicBlock.cpp
+END
+MyAutoMergeThread.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/BrowserPicture/!svn/ver/56/sources/BrowsePicture/source/MyAutoMergeThread.cpp
+END
+stdafx.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/BrowserPicture/!svn/ver/25/sources/BrowsePicture/source/stdafx.cpp
+END
+MySplitThread.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/BrowserPicture/!svn/ver/56/sources/BrowsePicture/source/MySplitThread.cpp
+END
+browsepicture.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/BrowserPicture/!svn/ver/56/sources/BrowsePicture/source/browsepicture.cpp
+END
+MyMergeThread.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/BrowserPicture/!svn/ver/56/sources/BrowsePicture/source/MyMergeThread.cpp
+END

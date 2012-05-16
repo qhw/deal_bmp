@@ -1,0 +1,9 @@
+K 14
+bugtraq:number
+V 4
+true
+K 15
+tsvn:logminsize
+V 2
+10
+END
